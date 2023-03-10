@@ -171,15 +171,11 @@ def ran():
     board = np.zeros((9, 9), dtype=int)
     for row in range(9):  # looping board and filling cells with random values
         for col in range(9):
-            for _ in range(2):  # increase chance for correct number
-                val = random.randint(0, 9)
-                if val == 0:
-                    board[row][col] = 0
-                else:
-                    if possible(board, row, col, val) and solve(board, row, col):  # checking if number can be there
-                        board[row][col] = val
-                    else:
-                        board[row][col] = 0
+            val = random.randint(0, 9)
+            if possible(board, row, col, val) and solve(board, row, col):  # checking if number can be there
+                board[row][col] = val
+            else:
+                board[row][col] = 0
     board = [[int(ele) for ele in sub] for sub in board]  # configuration for solve button
     for i in range(9):
         for j in range(9):
