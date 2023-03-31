@@ -1,2 +1,2 @@
-# Final School Project Sudoku solver with solvable generator
+# Final School Project Sudoku solver with solvable sudoku generator
 
